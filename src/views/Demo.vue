@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="demo">
+      <loading-default></loading-default>
+      <loading-wave></loading-wave>
+    </div>
+    <div class="demo">
       <lib-switch
         :state="data.switchState"
         @change="toggleSwitch"
@@ -36,11 +40,16 @@ import { reactive } from 'vue'
 
 import LibSwitch from '../components/lib/comp/both/switch/index'
 import LibStepper from '../components/lib/comp/both/stepper/index'
+import LoadingDefault from '../components/lib/comp/both/loading/index'
+import LoadingWave from '../components/lib/comp/both/loading/wave'
+
 export default {
   name: 'Demo',
   components: {
     LibSwitch,
-    LibStepper
+    LibStepper,
+    LoadingDefault,
+    LoadingWave
   },
   setup () {
     const data = reactive({
