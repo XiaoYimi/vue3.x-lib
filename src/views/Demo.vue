@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="demo">
+      <lib-search bg="yellow" type="fillet"></lib-search>
+    </div>
+    <div class="demo">
       <loading-default></loading-default>
       <loading-wave></loading-wave>
     </div>
@@ -42,6 +45,7 @@ import LibSwitch from '../components/lib/comp/both/switch/index'
 import LibStepper from '../components/lib/comp/both/stepper/index'
 import LoadingDefault from '../components/lib/comp/both/loading/index'
 import LoadingWave from '../components/lib/comp/both/loading/wave'
+import LibSearch from '../components/lib/comp/h5/search/index'
 
 export default {
   name: 'Demo',
@@ -49,7 +53,8 @@ export default {
     LibSwitch,
     LibStepper,
     LoadingDefault,
-    LoadingWave
+    LoadingWave,
+    LibSearch
   },
   setup () {
     const data = reactive({
