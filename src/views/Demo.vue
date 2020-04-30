@@ -1,10 +1,14 @@
 <template>
   <div>
+    <lib-v-navbar
+      @tabchange="tabchange1">
+      {{ data.vNavbarContent }}
+    </lib-v-navbar>
     <div class="demo">
       <lib-navbar navbar-color="#ffffff" navbar-bg :space="12" tab-icon-color="red" @tabchange="tabChange"></lib-navbar>
     </div>
     <div class="demo">
-      <lib-search bg="yellow" type="fillet"></lib-search>
+      <lib-search bg="yellow" type="fillet" @search="searchWhat"></lib-search>
     </div>
     <div class="demo">
       <loading-default></loading-default>
@@ -50,6 +54,7 @@ import LoadingDefault from '../components/lib/comp/both/loading/index'
 import LoadingWave from '../components/lib/comp/both/loading/wave'
 import LibSearch from '../components/lib/comp/h5/search/index'
 import LibNavbar from '../components/lib/comp/h5/navbar/index'
+import LibVNavbar from '../components/lib/comp/h5/navbar/vnavbar'
 
 export default {
   name: 'Demo',
@@ -59,12 +64,14 @@ export default {
     LoadingDefault,
     LoadingWave,
     LibSearch,
-    LibNavbar
+    LibNavbar,
+    LibVNavbar
   },
   setup () {
     const data = reactive({
       switchState: false,
-      stepperCount: 4
+      stepperCount: 4,
+      vNavbarContent: 'demo'
     })
 
     function toggleSwitch (state) {
@@ -81,11 +88,22 @@ export default {
       console.log(item)
     }
 
+    function tabchange1 (item) {
+      console.log(item)
+      data.vNavbarContent = item.name
+    }
+
+    function searchWhat (word) {
+      console.log(word)
+    }
+
     return {
       data,
       toggleSwitch,
       steperChange,
-      tabChange
+      tabChange,
+      tabchange1,
+      searchWhat
     }
   }
 }
