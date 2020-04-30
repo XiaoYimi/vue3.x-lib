@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { reactive, onMounted } from 'vue'
+import { reactive, onMounted, computed } from 'vue'
 export default {
   name: 'Lib-Navbar',
   props: {
@@ -24,24 +24,15 @@ export default {
     space: { type: Number, default: 10 }, // px
     tabIconWidth: { type: Number, default: 25 }, // px
     tabIconColor: { type: String, default: 'blueviolet' },
-    list: { type: Array, default: () => [] }
+    // 数据格式: { name: '' }
+    list: { type: Array, default: () => [{ id: 1, name: '菜单1' }, { id: 2, name: '菜单2' }, { id: 3, name: '菜单3' }] }
   },
   setup (props, { emit }) {
     const data = reactive({
       wrap_styles: '',
       item_styles: '',
       icon_styles: '',
-      list: [
-        { id: 1, name: '菜单合' },
-        { id: 2, name: '目录' },
-        { id: 3, name: '总集' },
-        { id: 4, name: '菜单在合' },
-        { id: 5, name: '目录' },
-        { id: 6, name: '总集' },
-        { id: 7, name: '菜单合' },
-        { id: 8, name: '目录' },
-        { id: 9, name: '总集' }
-      ]
+      list: computed(() => props.list)
     })
 
     function funcTabIconChange (domClicked) {
