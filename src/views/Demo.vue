@@ -1,6 +1,9 @@
 <template>
   <div>
     <div class="demo">
+      <lib-navbar navbar-color="#ffffff" navbar-bg :space="12" tab-icon-color="red" @tabchange="tabChange"></lib-navbar>
+    </div>
+    <div class="demo">
       <lib-search bg="yellow" type="fillet"></lib-search>
     </div>
     <div class="demo">
@@ -46,6 +49,7 @@ import LibStepper from '../components/lib/comp/both/stepper/index'
 import LoadingDefault from '../components/lib/comp/both/loading/index'
 import LoadingWave from '../components/lib/comp/both/loading/wave'
 import LibSearch from '../components/lib/comp/h5/search/index'
+import LibNavbar from '../components/lib/comp/h5/navbar/index'
 
 export default {
   name: 'Demo',
@@ -54,7 +58,8 @@ export default {
     LibStepper,
     LoadingDefault,
     LoadingWave,
-    LibSearch
+    LibSearch,
+    LibNavbar
   },
   setup () {
     const data = reactive({
@@ -72,10 +77,15 @@ export default {
       data.stepperCount = count
     }
 
+    function tabChange (item) {
+      console.log(item)
+    }
+
     return {
       data,
       toggleSwitch,
-      steperChange
+      steperChange,
+      tabChange
     }
   }
 }
