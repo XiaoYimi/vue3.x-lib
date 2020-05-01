@@ -110,5 +110,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.demo { padding: 30px 0; }
 </style>

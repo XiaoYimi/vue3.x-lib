@@ -45,7 +45,10 @@ export default {
       cancel_state: false
     })
 
-    function search () { emit('search', data.word) }
+    function search () {
+      emit('search', data.word)
+      data.word = ''
+    }
 
     function clear () { data.word = '' }
 

@@ -20,7 +20,7 @@ import { reactive, computed, onMounted } from 'vue'
 export default {
   name: 'Lib-VNavbar',
   props: {
-    tabs: {
+    list: {
       type: Array,
       default: () => [{ name: '菜单一' }, { name: '菜单吧二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }, { name: '菜单一' }, { name: '菜单二' }, { name: '菜单三' }]
     },
@@ -36,7 +36,7 @@ export default {
   setup (props, { emit, slots }) {
     console.log(slots)
     const data = reactive({
-      tabs: computed(() => props.tabs),
+      tabs: computed(() => props.list),
       tid: 0,
       navbar_styles: '',
       tabs_styles: '',

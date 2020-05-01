@@ -1,0 +1,51 @@
+.page {
+  padding-bottom: 20px;
+
+  .page-title {
+    padding: 10px;
+    font-size: 22px;
+  }
+
+  .demo {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 10px 10px 20px;
+
+    .demo-title {
+      font-size: 18px;
+    }
+
+    .demo-item {
+      padding-bottom: 5px;
+      
+      .demo-desc { font-size: 14px; }
+    }
+  }
+
+  .config {
+    padding: 0 10px;
+
+    .config-title {
+      font-size: 18px;
+    }
+
+    .config-table {
+      margin-top: 20px;
+      border: 1px solid #f0f0f0;
+      border-bottom-width: 0;
+    
+      tr {
+        th, td {
+          border-right: 1px solid #f0f0f0;
+          border-bottom: 1px solid #f0f0f0;
+          padding: 6px 12px;
+          text-align: left;
+        
+          &:last-child {
+            border-right: 0px solid transparent;
+            border-bottom: 1px solid #f0f0f0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -19,8 +19,6 @@ export default {
     dotR: { type: Number, default: 6 }, // 6
     count: { type: Number, default: 8 },
     color: { type: String, default: 'pink' },
-    // 圆点大小
-    size: { type: Number, default: 16 },
     type: { type: String, default: 'rorating-waving' },
     duration: { type: Number, default: 5 }
   },
